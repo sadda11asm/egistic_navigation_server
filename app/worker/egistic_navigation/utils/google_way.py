@@ -1,15 +1,7 @@
-import more_itertools as mi
-import os
 import numpy as np
-import pandas as pd
-import itertools
-import collections
-import ortools
 import matplotlib.pyplot as plt
-import scipy.spatial.distance as scispd
 import scipy.spatial as scisp
-from egistic_navigation.global_support import simple_logger
-import egistic_navigation.global_support as gsup
+from worker.egistic_navigation.global_support import simple_logger
 from ortools.constraint_solver import routing_enums_pb2
 from ortools.constraint_solver import pywrapcp
 

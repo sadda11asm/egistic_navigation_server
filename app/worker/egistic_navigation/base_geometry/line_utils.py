@@ -1,15 +1,14 @@
-import collections
 import functools
 
 import numpy as np
 from matplotlib import pyplot as plt
 from shapely import geometry as shg
 
-from egistic_navigation.base_geometry.geom_utils import GenericGeometry,line_xy,perpendicular,normalize,min_dist
-from egistic_navigation.base_geometry.point_utils import ThePoint
+from app.worker.egistic_navigation.base_geometry.geom_utils import GenericGeometry,line_xy,perpendicular,normalize,min_dist
+from app.worker.egistic_navigation.base_geometry.point_utils import ThePoint
 
-from egistic_navigation.global_support import simple_logger
-from egistic_navigation.global_support import logger
+from app.worker.egistic_navigation.global_support import simple_logger
+from app.worker.egistic_navigation.global_support import logger
 from lgblkb_tools import geometry as gmtr
 from sortedcontainers import SortedDict
 

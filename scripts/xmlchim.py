@@ -1,12 +1,11 @@
-import numpy as np
 import requests
 import shapely.geometry as shg
 from box import Box
-from egistic_navigation.global_support import simple_logger
-from egistic_navigation.base_geometry.line_utils import TheLine
-from egistic_navigation.base_geometry.poly_utils import ThePoly
+from app.worker.egistic_navigation.global_support import simple_logger
+from app.worker.egistic_navigation.base_geometry.line_utils import TheLine
+from app.worker.egistic_navigation.base_geometry.poly_utils import ThePoly
 import matplotlib.pyplot as plt
-from lgblkb_tools.geometry import SpatialGeom,convert_crs
+
 
 def main():
 	with open("/home/lgblkb/PycharmProjects/Egistic/Scripts/polygon.xml") as fd:

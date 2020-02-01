@@ -13,14 +13,14 @@ from matplotlib.patches import PathPatch
 from shapely import geometry as shg,ops as shops
 from sklearn.cluster import KMeans
 
-from egistic_navigation.base_geometry.geom_utils import GenericGeometry,get_from_geojson,line_xy,pathify,is_clockwise,generate_cells,min_dist
-from egistic_navigation.base_geometry.line_utils import TheLine
-from egistic_navigation.base_geometry.point_utils import ThePoint
-from egistic_navigation.global_support import simple_logger
-from egistic_navigation.katana_case import katana
-from egistic_navigation.utils.google_way import SimpleTSP
+from app.worker.egistic_navigation.base_geometry.geom_utils import GenericGeometry,get_from_geojson,line_xy,pathify,is_clockwise,generate_cells,min_dist
+from app.worker.egistic_navigation.base_geometry.line_utils import TheLine
+from app.worker.egistic_navigation.base_geometry.point_utils import ThePoint
+from app.worker.egistic_navigation.global_support import simple_logger
+from app.worker.egistic_navigation.katana_case import katana
+from app.worker.egistic_navigation.utils.google_way import SimpleTSP
 from lgblkb_tools import geometry as gmtr
-from egistic_navigation.global_support import logger
+from app.worker.egistic_navigation.global_support import logger
 
 class TheNodeView(object):
 
@@ -526,12 +526,12 @@ class ThePoly(GenericGeometry):
 	# 	return out
 
 	@simple_logger.wrap()
-	def generate_clusters(self,grid_resolution,n_clusters,show=''):
+	def generate_clusters(self,grid_resolution,n_clusters,show='',random_state=1):
 		# interior_points=self.get_interior_points(distance=grid_resolution)
 		interior_points=self.generate_grid_points(grid_resolution=grid_resolution)
 		n_clusters=min(n_clusters,len(interior_points))
 		simple_logger.debug('n_clusters: %s',n_clusters)
-		kmeans=KMeans(n_clusters=n_clusters,random_state=1)
+		kmeans=KMeans(n_clusters=n_clusters,random_state=random_state)
 		kmeans.fit(interior_points)
 		if show:
 			plot_clusters,plot_self=1,0

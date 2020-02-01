@@ -1,11 +1,5 @@
-import os
-import uuid
-
 import geojson
 import numpy as np
-import pandas as pd
-import itertools
-import collections
 
 from box import Box
 from matplotlib import pyplot as plt
@@ -13,8 +7,7 @@ from matplotlib.path import Path
 from numpy import ones,concatenate,asarray
 from shapely import geometry as shg
 
-from egistic_navigation import global_support as gsup
-from egistic_navigation.global_support import simple_logger
+from app.worker.egistic_navigation.global_support import simple_logger
 
 def ring_coding(ob):
 	# The codes will be all "LINETO" commands, except for "MOVETO"s at the

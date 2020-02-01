@@ -19,7 +19,7 @@ Created on Thu Feb 05 19:43:15 2015
 
 """
 
-from egistic_navigation import seidel
+from app.worker.egistic_navigation import seidel
 import matplotlib.pyplot as plt
 from descartes import PolygonPatch
 from shapely.geometry import Polygon
@@ -52,7 +52,7 @@ dude=[[174.50415,494.59368],[215.21844,478.87939],[207.36129,458.87939],[203.075
       [192.89701,377.80796],[177.18272,402.27225],[172.36129,413.87939],[169.14701,430.48653],[168.61129,458.52225],
       [168.61129,492.80796]]
 
-seidel=seidel.Triangulator(dude)
+seidel= seidel.Triangulator(dude)
 
 triangles=seidel.triangles()
 trapezoids=seidel.trapezoids

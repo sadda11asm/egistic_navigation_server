@@ -1,12 +1,6 @@
-import os
-import numpy as np
-import pandas as pd
-import itertools
-import collections
-from Egistic_Nav_Env.envs import nav_env
 import gym
-from egistic_navigation.global_support import simple_logger,with_logging
-import egistic_navigation.global_support as gsup
+from app.worker.egistic_navigation.global_support import simple_logger
+
 
 def main():
 	env=gym.make('Egistic_Nav_Env:nav_env-v0')

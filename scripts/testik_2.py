@@ -1,12 +1,8 @@
-import os
-import numpy as np
-import pandas as pd
-import itertools
-import collections
-import shapely.geometry as shg
-from egistic_navigation.global_support import simple_logger
+from app.worker.egistic_navigation.global_support import simple_logger
 from lgblkb_tools.folder_utils import create_iterated_path
-from egistic_navigation import global_support as gsup
+from app.worker.egistic_navigation import global_support as gsup
+
+
 def test_create_iterated_path():
 	path=r'/home/lgblkb/PycharmProjects/egistic_navigation/egistic_navigation/configs_local_koko.yaml'
 	new_path=create_iterated_path(path)

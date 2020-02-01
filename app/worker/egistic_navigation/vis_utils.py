@@ -1,4 +1,4 @@
-from egistic_navigation.global_support import logger
+from app.worker.egistic_navigation.global_support import logger
 import visilibity as vis
 
 def testVisilibity():

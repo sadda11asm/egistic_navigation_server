@@ -1,22 +1,14 @@
-import shapely.affinity as shaff
-import more_itertools as mi
 import collections
 
-import shapely.geometry as shg
 import matplotlib.pyplot as plt
 import numpy as np
-from geoalchemy2.shape import to_shape
 
-import egistic_navigation.global_support as gsup
-import lgblkb_tools.geometry as gmtr
-from egistic_navigation.base_geometry.geom_utils import min_dist
-from egistic_navigation.base_geometry.line_utils import TheLine
-from egistic_navigation.base_geometry.point_utils import ThePoint
-from egistic_navigation.base_geometry.poly_utils import ThePoly
-from egistic_navigation.field_geometry.field_utils import FieldPoly,get_paths
-from egistic_navigation.global_support import simple_logger
+import app.worker.egistic_navigation.global_support as gsup
+from app.worker.egistic_navigation.base_geometry.point_utils import ThePoint
+from app.worker.egistic_navigation.base_geometry.poly_utils import ThePoly
+from app.worker.egistic_navigation.field_geometry.field_utils import FieldPoly
+from app.worker.egistic_navigation.global_support import simple_logger
 # from lgblkb_tools.db_utils.sqla_orms import Cadastres_Info
-import visvalingamwyatt as vw
 
 def check_cases(seed=None,region_extent=1e6,show=False):
 	for i in range(3,100):
