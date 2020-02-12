@@ -1,9 +1,13 @@
 FROM geographica/gdal2:2.4.3
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
-
+ARG TIME_ZONE=Asia/Almaty
+ENV LANG=C.UTF-8 \
+    DEBIAN_FRONTEND=noninteractive \
+    TZ=${TIME_ZONE}
 WORKDIR /
 COPY req_init.txt ./
 #RUN pip install --upgrade pip
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get -y install libcurl4-openssl-dev
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-pip \

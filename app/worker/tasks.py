@@ -8,10 +8,11 @@ import pyproj
 from shapely.ops import transform
 import geopandas
 from shapely.geometry import MultiPoint
-
+from celery import shared_task
 
 # logger = simple_logger
-@app.task(bind=True, name='get_equally_separated_points')
+@shared_task(bind=True, ignore_result=False, name='app.worker.tasks.get_equally_separated_points',
+             queue='app.worker.tasks.get_equally_separated_points')
 def get_equally_separated_points(self, wkt, parcel_area, epsg):
     # logger.info("WKT: %s", wkt)
     # project = partial(

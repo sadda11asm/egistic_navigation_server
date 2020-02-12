@@ -114,16 +114,16 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
-
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
-
-
-# Static files (CSS, JavaScript, Images)
+USE_TZ = False
+CELERY_CREATE_MISSING_QUEUES = True
+CELERY_TASK_QUEUE_MAX_PRIORITY=10
+CELERY_TIMEZONE = 'Asia/Almaty'
+TIME_ZONE = 'Asia/Almaty'
+timezone = 'Asia/Almaty'
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
