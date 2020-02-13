@@ -3,10 +3,10 @@ from celery import Celery
 from django.conf import settings
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
-app = Celery('tasks', backend='rpc://')
-app.config_from_object(settings)
+app = Celery('tasks', backend='rpc://', broker="amqp://patriot:GtzYz4ahBvR3THg6x89E7wpNDCtYGLCZt6LSqZNXWaerEqD3bdkxRqTjZ6DFjL6Z@rabbitmq:5672")
+app.conf.update(settings.CELERY)
 app.conf.update(
-	enable_utc = True,
-	timezone = 'Asia/Almaty')
+	ENABLE_UTC=True,
+	TIMEZONE='Asia/Almaty')
 
 #app.conf.CELERY_TIMEZONE = 'Asia/Almaty'

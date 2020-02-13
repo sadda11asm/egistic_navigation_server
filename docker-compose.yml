@@ -25,7 +25,29 @@ services:
       - rabbit
     volumes:
       - ./app:/app
-
+#
+#networks:
+#  rabbit:
+#    external: true
+#
+  rabbitmq:
+      image: rabbitmq:3.7.13-management
+      networks:
+        - "rabbit"
+      ports:
+        - "5672:5672"
+        - "15672:15672"
+      volumes:
+        - "rabbitmq_data:/data"
+      env_file:
+        - env.env
+      environment:
+        - "TZ=Asia/Almaty"
 networks:
   rabbit:
+    external:
+      name: "rabbit"
+
+volumes:
+  rabbitmq_data:
     external: true
