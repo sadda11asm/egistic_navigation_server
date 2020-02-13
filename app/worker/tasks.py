@@ -36,6 +36,6 @@ def get_equally_separated_points(self, wkt, parcel_area, epsg):
 
     multipoint = MultiPoint(centers_final)
     json_dump = json.dumps({'multipoint': multipoint.wkt})
-    return json_dump
+    return multipoint.wkt
 
 

@@ -1,26 +1,26 @@
 version: '3.5'
 services:
-
-  app:
-    build: .
-    image: &app app
-    restart: "no"
-#    command: ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
-    env_file: &envfile
-      - env.env
-#    ports:
-#      - "8000:8000"
-    volumes:
-      - ./app:/app
-#    depends_on:
-#      - broker
+#  app:
+#    build: .
+#    image: &app app
+#    restart: "no"
+##    command: ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
+#    env_file: &envfile
+#      - env.env
+##    ports:
+##      - "8000:8000"
+#    volumes:
+#      - ./app:/app
+##    depends_on:
+##      - broker
 
   worker:
     build: .
-    image: *app
+    image: saddam/analitika
     restart: "no"
-    env_file: *envfile
-    command: ["celery", "worker", "--app=worker.worker_conf.app", "-Q", "app.worker.tasks.get_equally_separated_points", "--concurrency=1", "--loglevel=INFO"]
+    env_file:
+      - env.env
+    command: ["celery", "worker", "--app=worker.worker_conf.app", "-Q", "app.worker.tasks.get_equally_separated_points", "--concurrency=1", "--loglevel=INFO","-n@saddam_analitika"]
     networks:
       - rabbit
     volumes:
