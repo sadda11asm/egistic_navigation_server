@@ -9,7 +9,7 @@ astor==0.8.1
 attrs==19.3.0
 bcrypt==3.1.7
 billiard==3.6.1.0
-bleach==3.1.0
+bleach==3.1.4
 blinker==1.4
 boto==2.49.0
 cachetools==4.0.0
