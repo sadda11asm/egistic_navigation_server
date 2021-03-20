@@ -82,7 +82,7 @@ imageio==2.6.1
 importlib-metadata==1.4.0
 invoke==1.4.0
 itsdangerous==1.1.0
-Jinja2==2.10.3
+Jinja2==2.11.3
 joblib==0.14.1
 jsonpickle==1.2
 jwcrypto==0.6.0
