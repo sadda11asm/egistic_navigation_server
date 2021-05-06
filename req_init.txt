@@ -33,7 +33,7 @@ Flask==1.1.1
 Flask-Admin==1.5.4
 Flask-Caching==1.8.0
 Flask-CeleryExt==0.3.2
-Flask-Cors==3.0.8
+Flask-Cors==3.0.9
 Flask-Elasticsearch==0.2.5
 Flask-JWT-Extended==3.24.1
 # Flask-Limiter==1.1.0
