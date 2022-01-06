@@ -1,7 +1,7 @@
 #visivility
 billiard==3.6.1.0
 cachetools==3.1.1
-celery==4.3.0
+celery==5.2.2
 amqp==2.5.2
 absl-py==0.8.1
 requests==2.22.0
