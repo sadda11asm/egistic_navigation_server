@@ -85,7 +85,7 @@ itsdangerous==1.1.0
 Jinja2==2.10.3
 joblib==0.14.1
 jsonpickle==1.2
-jwcrypto==0.6.0
+jwcrypto==1.4
 kiwisolver==1.1.0
 kombu==4.6.7
 lgblkb-tools==0.3.10.4
